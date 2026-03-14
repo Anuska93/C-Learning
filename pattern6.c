@@ -23,3 +23,18 @@ int main() {
 
 
 === Code Execution Successful ===
+
+/* Pseudocode
+Procedure Pattern(n)
+for i=1 to n do
+    for j=n-i to 1 do
+        print " "
+    end for
+    for k=1 to i do
+        print "*"
+        print " "
+    end for
+    print "\n"
+end for
+end procedure
+*/
