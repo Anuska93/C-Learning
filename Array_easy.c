@@ -68,7 +68,7 @@ int main() {
 
 int main() {
     int i,max=0,n;
-   int a[];
+   int a[n];
    printf("How many inputs you want? ");
    scanf("%d",&n);
    printf("Please input now\n");
