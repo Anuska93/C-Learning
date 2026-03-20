@@ -64,4 +64,20 @@ int main() {
 
 5. Take n elements from user and print the largest element.
 
-  
+  #include <stdio.h>
+
+int main() {
+    int i,max=0,n;
+   int a[10];
+   printf("How many inputs you want? ");
+   scanf("%d",&n);
+   printf("Please input now\n");
+   for(i=0;i<n;i++){
+       scanf("%d",&a[i]);
+        if(a[i]>max){
+            max=a[i];
+        }
+   }
+    printf("%d is largest",max);
+    return 0;
+}
