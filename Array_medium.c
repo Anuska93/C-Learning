@@ -118,5 +118,41 @@ int main() {
     return 0;
 }
 
+
+#include <stdio.h>
+int main(){
+    int n,i,m;
+    printf("Input n for first array\n");
+    scanf("%d",&n);
+    printf("Input elements for 1st array\n");
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("Input m for first array\n");
+    scanf("%d",&m);
+    printf("Input elements for 2nd array\n");
+    int b[m];
+    for(i=0;i<m;i++){
+        scanf("%d",&b[i]);
+    }
+    int c[n+m];
+    for(i=0;i<n;i++){
+        c[i]=a[i];
+    }
+    for(i=n;i<n+m;i++){
+        c[i]=b[i];
+    }
+    for(i=0;i<n+m;i++){
+        printf("%d ",c[i]);
+    }
+
+    return 0;
+}
+/*  a[]- 1,2,3,5,6 - n
+    b[]- 9,8,6,3 - m
+    c[]- n+m     -> a[] then -> b[]
+*/
+
 12. Merge two arrays into a third array.
 
