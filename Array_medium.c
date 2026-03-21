@@ -98,3 +98,25 @@ int main(){
     
     return 0;
 }
+
+11. Copy elements from one array to another.
+
+  #include <stdio.h>
+int main() {
+    int n,i,j;
+    printf("Input n:\n");
+    scanf("%d",&n);
+    int a[n],b[n];
+    printf("Input elements now\n");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++){
+        b[i]=a[i];
+        printf("%d ",b[i]);
+    }
+    return 0;
+}
+
+12. Merge two arrays into a third array.
+
