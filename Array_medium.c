@@ -57,3 +57,40 @@ int main() {
     }
      return 0;
 }
+
+9. Count how many times a number appears in an array.
+
+  #include <stdio.h>
+int main(){
+    int i,s=2,f=0,n;
+    int a[]={2,5,5,2,99,2,6,2};
+    n=sizeof(a)/sizeof(a[0]);
+    for(i=0;i<n;i++){
+        if(s==a[i]){
+            f++;
+        }
+    }
+    printf("%d",f);
+    return 0;
+}
+
+10. Separate positive and negative numbers count.
+
+  #include <stdio.h>
+
+int main(){
+    int n,i,f=0;
+    printf("Input n\n");
+    scanf("%d",&n);
+    int a[n];
+    printf("Input elements now:\n");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+        if(a[i]>=0){
+            f++;
+        }
+    }
+    printf("positive values are:%d\nnegative values are:%d",f,n-f);
+    
+    return 0;
+}
