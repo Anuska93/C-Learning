@@ -39,11 +39,11 @@ int main() {
 
 #include <stdio.h>
 int main() {
-    int n,i,k;
+    int n,i,k,flag=0;
     printf("Input n:\n");
     scanf("%d",&n);
     int a[n];
-    printf("Input array elements:\n ");
+    printf("Input array elements:\n");
     for(i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
@@ -52,9 +52,13 @@ int main() {
     for(i=0;i<n;i++){
         if(k==a[i]){
             printf("Found at index %d",i);
-            break;
+            flag=1;
         }
     }
+    if(flag==0){
+        printf("Not found.");
+    }
+    
      return 0;
 }
 
