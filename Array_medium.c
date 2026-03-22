@@ -119,6 +119,9 @@ int main() {
 }
 
 
+
+12. Merge two arrays into a third array.
+
 #include <stdio.h>
 int main(){
     int n,i,m;
@@ -129,7 +132,7 @@ int main(){
     for(i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
-    printf("Input m for first array\n");
+    printf("Input m for second array\n");
     scanf("%d",&m);
     printf("Input elements for 2nd array\n");
     int b[m];
@@ -137,22 +140,20 @@ int main(){
         scanf("%d",&b[i]);
     }
     int c[n+m];
-    for(i=0;i<n;i++){
-        c[i]=a[i];
-    }
-    for(i=n;i<n+m;i++){
-        c[i]=b[i];
+    for(i=0;i<n+m;i++){
+        if(i<n){
+            c[i]=a[i];
+        }
+        else{
+            c[i]=b[i-n];
+        }
     }
     for(i=0;i<n+m;i++){
         printf("%d ",c[i]);
     }
-
     return 0;
 }
-/*  a[]- 1,2,3,5,6 - n
-    b[]- 9,8,6,3 - m
-    c[]- n+m     -> a[] then -> b[]
-*/
 
-12. Merge two arrays into a third array.
+13. Find the second largest element in an array.
 
+  
