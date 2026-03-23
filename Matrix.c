@@ -65,3 +65,54 @@ int main(){
 2. Multiplication of two matrices.
 
   
+  #include <stdio.h>
+int mulMatrix(int m,int n, int p,int a[m][n],int b[n][p]);
+int main(){
+    int m,n,p,o,i,j;
+    printf("\nFor Matrix 1\n\nNumber of rows?\nNumber of columns?\n");
+    scanf("%d%d",&m,&n);
+    int a[m][n];
+    printf("\nEnter elements for matrix 1\n");
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            printf("[%d] [%d]: ",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("\nFor Matrix 2\n\nNumber of rows?\nNumber of columns?\n");
+    scanf("%d%d",&o,&p);
+    while(o!=n){
+        printf("The number of columns in matrix 1 should be equal to the number of rows in matrix 2\nTRY AGAIN...\n\n");
+        printf("\nFor Matrix 2\n\nNumber of rows?\nNumber of columns?\n");
+        scanf("%d%d",&o,&p);
+    }
+    int b[n][p];
+    printf("\nEnter elements for matrix 2\n\n");
+    for(i=0;i<n;i++){
+        for(j=0;j<p;j++){
+            printf("[%d] [%d]: ",i,j);
+            scanf("%d",&b[i][j]);
+        }
+    }
+    mulMatrix(m,n,p,a,b);
+    return 0;
+}
+int mulMatrix(int m,int n, int p,int a[m][n],int b[n][p]){
+    int i,j,k;
+    int c[m][p];
+    for(i=0;i<m;i++){
+        for(j=0;j<p;j++){
+            c[i][j]=0;
+            for(k=0;k<n;k++){
+                c[i][j]+= a[i][k]*b[k][j];
+            }
+        }
+    
+    }
+    printf("\n\nResultant Matrix\n");
+    for(i=0;i<m;i++){
+        for(j=0;j<p;j++){
+            printf("%d ",c[i][j]);
+        }printf("\n");
+    }
+}
