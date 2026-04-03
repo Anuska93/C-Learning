@@ -139,3 +139,37 @@ Odd array:
 21	11	
 
 }
+
+4. Inputing elements into an array then passing address of each element into another array (using array of pointers).
+
+#include <stdio.h>
+
+int main() {
+   int *p[10];
+   int a[10],i;
+   printf("Enter 10 elements:\n");
+   for(i=0;i<10;i++){
+       printf("Enter element %d:\t",i+1);
+       scanf("%d",a+i);
+       *(p+i)=a+i;// storing address
+   }
+   for(i=0;i<10;i++){
+       printf("%d  ",**(p+i));// getting the value
+   }
+    return 0;
+}
+
+Enter 10 elements:
+Enter element 1:	1
+Enter element 2:	2
+Enter element 3:	1
+Enter element 4:	22
+Enter element 5:	111
+Enter element 6:	21
+Enter element 7:	211
+Enter element 8:	122
+Enter element 9:	12
+Enter element 10:	1
+1  2  1  22  111  21  211  122  12  1  
+
+=== Code Execution Successful ===
