@@ -22,6 +22,7 @@ int main() {
 }
 
 /*
+Procedure count()
 display "Enter string"
 while(true) do
     read s[i]
@@ -36,6 +37,7 @@ for i=0 to s[i]!='\0'
 end for
 display count
 return 0
+end Procedure
 */
 
 2. Copying a string into another string.
@@ -62,6 +64,7 @@ int main() {
 }
 
 /*
+Procedure CopyString
 display "enter string"
 while(true) do
     read s[i]
@@ -76,4 +79,5 @@ for i=0 to s[i]!='\0'
 end for
 display a
 return 0
+end Procedure
 */
