@@ -21,6 +21,23 @@ int main() {
     return 0;
 }
 
+/*
+display "Enter string"
+while(true) do
+    read s[i]
+    if(s[i]=='\n')
+        s[i]='\0'
+            break
+    end if
+    i++
+end while
+for i=0 to s[i]!='\0'
+    count++
+end for
+display count
+return 0
+*/
+
 2. Copying a string into another string.
 
 #include <stdio.h>
@@ -43,3 +60,20 @@ int main() {
     printf("%s",a);
     return 0;
 }
+
+/*
+display "enter string"
+while(true) do
+    read s[i]
+    if(s[i]=='\n')
+        s[i]='\0'
+            break
+    end if
+    i++
+end while
+for i=0 to s[i]!='\0'
+    a[i]=s[i]
+end for
+display a
+return 0
+*/
