@@ -12,5 +12,16 @@ int sum(int n){
     return n+sum(n-1);
 }
 
-
+/*
+Procedure sum(n)
+int s=sum(50)
+display s
+return 0
+int sum(n)
+    if(n==0)
+        return 0
+    end if
+    return n+sum(n-1)
+end Procedure
+*/
 
