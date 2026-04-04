@@ -17,3 +17,19 @@ int fib(int n){
 }
 // 0 1 1 2 3 5 8
 // 3-> 2 1=2  2-> 1 0=1 
+
+/*
+Procedure Fib(n)
+int f=fib(1)
+display f
+return 0
+int fib(n)
+if(n==0)
+    return 0
+end if
+if(n==1)
+    return 1
+end if
+return fib(n-1)+fib(n-2)
+end Procedure
+*/
