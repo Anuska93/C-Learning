@@ -64,7 +64,7 @@ int main() {
 }
 
 /*
-Procedure CopyString
+Procedure CopyString()
 display "enter string"
 while(true) do
     read s[i]
