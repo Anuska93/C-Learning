@@ -11,3 +11,16 @@ int fact(int n){
     }
     return n*fact(n-1);
 }
+
+/*
+Procedure fact(n)
+int f=fact(6)
+display f
+return 0
+int fact(n)
+    if(n==1)
+        return 1
+    end if
+    return n*fact(n-1)
+end Procedure
+*/
