@@ -1,4 +1,4 @@
-// Creating a LL 
+// 1. Creating a LL 
 #include<stdlib.h>
 #include <stdio.h>
 struct node{
@@ -60,3 +60,46 @@ int main()
 }
 OUTPUT:
 1->2->3->4->5->NULL
+
+// 2. Inserting at beginning.
+
+#include<stdlib.h>
+#include <stdio.h>
+struct node{
+    int value;
+    struct node *next;
+};
+int main()
+{
+    int a;
+    struct node *node= (struct node *)malloc(sizeof(struct node));
+    struct node *temp=NULL;
+    temp= node;
+    printf("Enter elements for LL to insert(00 to EXIT):\n");
+    while(1){
+        struct node *new= (struct node *)malloc(sizeof(struct node));
+        printf("Enter value: ");
+        scanf("%d",&a);
+        if(a==00){
+            break;
+        }
+        new->value=a;
+        new->next=NULL;
+        temp->next=new;
+        temp=temp->next;
+    }
+    printf("Enter element to insert at beginning:\n");
+     struct node *new= (struct node*)malloc(sizeof(struct node));
+     scanf("%d",&a);
+     new->value=a;
+     new->next=node->next;
+     node->next=new;
+     temp=node;
+     printf("Inserted LL: \n");
+    while(temp->next!=NULL){
+        printf("%d->",temp->next->value);
+        temp=temp->next;
+        
+    }printf("NULL");
+    return 0;
+}
