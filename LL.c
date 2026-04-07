@@ -103,3 +103,18 @@ int main()
     }printf("NULL");
     return 0;
 }
+// OUTPUT
+Enter elements for LL to insert(00 to EXIT):
+Enter value: 1
+Enter value: 2
+Enter value: 3
+Enter value: 4
+Enter value: 5
+Enter value: 6
+Enter value: 7
+Enter value: 8
+Enter value: 00
+Enter element to insert at beginning:
+9
+Inserted LL: 
+9->1->2->3->4->5->6->7->8->NULL
