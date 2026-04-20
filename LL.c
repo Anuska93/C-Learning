@@ -1,34 +1,6 @@
-// 1. Creating a LL 
-#include<stdlib.h>
-#include <stdio.h>
-struct node{
-    int value;
-    struct node *next;
-};
-int main()
-{
-    int i,a;
-    struct node *node= (struct node *)malloc(sizeof(struct node));
-    struct node *temp=NULL;
-    temp= node;
-    
-    for(i=0;i<5;i++){
-        struct node *new= (struct node *)malloc(sizeof(struct node));
-        scanf("%d",&a);
-        new->value=a;
-        new->next=NULL;
-        temp->next=new;
-        temp=temp->next;
-    }
-    temp=node;
-    while(temp->next!=NULL){
-        printf("%d->",temp->next->value);
-        temp=temp->next;
-        
-    }printf("NULL");
-    return 0;
+ 1. Creating a LL 
 
-  #include<stdlib.h>
+#include<stdlib.h>
 #include <stdio.h>
 struct node{
     int value;
@@ -61,7 +33,7 @@ int main()
 OUTPUT:
 1->2->3->4->5->NULL
 
-// 2. Inserting at beginning.
+2. Inserting at beginning.
 
 #include<stdlib.h>
 #include <stdio.h>
@@ -120,7 +92,7 @@ Inserted LL:
 9->1->2->3->4->5->6->7->8->NULL
 
     
-3. Menu driven LL.
+3. Menu driven LL.(all add opn)
     
 #include <stdio.h>
 #include <stdlib.h>
@@ -254,3 +226,83 @@ void display(struct node *head){
 		temp=temp->ptr;									
 	}
 }
+
+4. LL for first node delete.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+    int val;
+    struct node *nxt;
+};
+
+void menu();
+void delFirst(struct node*);
+void display(struct node*);
+void createLL(struct node*);
+
+int main()
+{
+    int i;
+    struct node *node1= (struct node*)malloc(sizeof(struct node));
+    while(1){
+        menu();
+        scanf("%d",&i);
+        if(i==4){return 0;}
+        if(i==1){ createLL(node1);}
+        if(i==2){delFirst(node1);}
+        if(i==3){display(node1);}
+        
+    }
+    return 0;
+}
+
+void menu(){
+    printf("\n\tMENU\n1.create LL\n2.Delete First element\n3.Display LL\n4.EXIT\n\n");
+}
+
+void createLL(struct node* node1){
+    int a;
+    struct node *temp=node1;
+    temp->nxt=NULL;
+    while(1){
+        struct node *new= (struct node*)malloc(sizeof(struct node));
+        printf("\nEnter Element(9999 to EXIT):\t");
+        scanf("%d",&a);
+        if(a==9999){
+            break;
+        }
+        new->val=a;
+        new->nxt=NULL;
+        temp->nxt=new;
+        temp=temp->nxt;
+    }
+}
+
+void delFirst(struct node* node1){
+    struct node *temp=node1;
+    if(temp->nxt==NULL){
+        printf("LL is Empty.");
+    }
+    else{
+    struct node *del= temp->nxt;
+    temp->nxt=del->nxt;
+    free(del);
+    }
+}
+
+void display(struct node* node1){
+    struct node *temp=node1;
+    if(temp->nxt==NULL){
+        printf("LL is Empty.");
+    }
+    else{
+    printf("\nLL:\t");
+    while(temp->nxt!=NULL){
+        printf("%d->",temp->nxt->val);
+        temp=temp->nxt;
+    }
+    printf("NULL\n");
+    }
+}	
