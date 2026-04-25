@@ -65,3 +65,80 @@ void merge(int arr[], int l,int m,int r) {
 
 o/p:
 0 1 3 5 8 9 
+
+2. using pointers and malloc mergeSort
+
+#include <stdlib.h>
+#include <stdio.h>
+void mergesort(int* a,int l,int r);
+void merge(int *a,int l,int m,int r);
+int main()
+{
+    int s,i=0;
+    printf("Array Size?\t");
+    scanf("%d",&s);
+    int *a= (int*)malloc(s*sizeof(int));
+    while(i<s){
+        printf("Enter element %d:\t",i+1);
+        scanf("%d",a+i);
+        i++;
+    }
+    printf("\nElements inserted successfully!\n");
+    mergesort(a,0,s-1);
+    
+    i=0;
+    while(i<s){
+        printf("%d ",*(a+i));
+        i++;
+    }
+
+    return 0;
+}
+
+void mergesort(int* a,int l,int r){
+    if(l<r){
+        int m=l+(r-l)/2;
+        mergesort(a,l,m);
+        mergesort(a,m+1,r);
+        merge(a,l,m,r);
+    }
+}
+
+void merge(int *a,int l,int m,int r){
+    int n1=m-l+1;
+    int n2=r-m;
+    int L[n1],R[n2];
+    int i=0,j=0,k;
+    while(i<n1){
+        *(L+i)=*(a+i+l);
+        i++;
+    }
+    while(j<n2){
+        *(R+j)=*(a+j+m+1);
+        j++;
+    }
+    i=0,j=0,k=l;
+    while(i<n1 && j<n2){
+        if(L[i]<=R[j]){
+            *(a+k)=*(L+i);
+            i++;
+        }
+        else{
+            *(a+k)=*(R+j);
+            j++;
+        }
+        k++;
+    }
+    while(i<n1){
+        *(a+k)=*(L+i);
+        i++;
+        k++;
+    }
+    while(j<n2){
+        *(a+k)=*(R+j);
+        j++;
+        k++;
+    }
+}
+
+
