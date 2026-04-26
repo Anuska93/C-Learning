@@ -66,15 +66,17 @@ void merge(int arr[], int l,int m,int r) {
 o/p:
 0 1 3 5 8 9 
 
-2. using pointers and malloc mergeSort
-
+2. using pointers and malloc mergeSort,binaryseach.
 #include <stdlib.h>
 #include <stdio.h>
+
 void mergesort(int* a,int l,int r);
 void merge(int *a,int l,int m,int r);
+int binarysearch(int *a,int l,int r,int target);
+
 int main()
 {
-    int s,i=0;
+    int s,i=0,t;
     printf("Array Size?\t");
     scanf("%d",&s);
     int *a= (int*)malloc(s*sizeof(int));
@@ -91,7 +93,16 @@ int main()
         printf("%d ",*(a+i));
         i++;
     }
-
+    printf("Sorted succesfully.\n");
+    printf("Element to search?\t");
+    scanf("%d",&t);
+    
+    int res = binarysearch(a,0,s-1,t);
+    if(res==-1){
+        printf("\nNot Found");
+    }else{
+        printf("\nFound at %d\n",res);
+    }
     return 0;
 }
 
@@ -139,6 +150,21 @@ void merge(int *a,int l,int m,int r){
         j++;
         k++;
     }
+}
+
+int binarysearch(int *a,int l,int r,int t){
+    int m;
+    while(l<=r){
+        m=l+(r-l)/2;
+        if(*(a+m)==t){
+            return m;
+        }
+        if(*(a+m)<m){
+            return binarysearch(a,l,m-1,t);
+        }else{
+            return binarysearch(a,m+1,r,t);
+        }
+    }return -1;
 }
 
 
