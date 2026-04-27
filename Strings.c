@@ -6,6 +6,7 @@ int main() {
     printf("Enter string\n");
     while(1){
         scanf("%c",&s[i]);
+        scanf("%s",s[i]);
         if(s[i]=='\n'){
             s[i]='\0';
             break;
